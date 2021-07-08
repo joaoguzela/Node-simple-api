@@ -1,0 +1,24 @@
+{
+  "name": "locadora_eteg",
+  "version": "1.0.0",
+  "description": "teste processo seletivo eteg",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaoguzela/Teste_Eteg.git"
+  },
+  "author": "joão guzela",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/joaoguzela/Teste_Eteg/issues"
+  },
+  "homepage": "https://github.com/joaoguzela/Teste_Eteg#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.6.0"
+  }
+}
