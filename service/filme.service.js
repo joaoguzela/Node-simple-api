@@ -2,10 +2,10 @@ import FilmeRepository from "../repositories/filme.repository.js"
 
 const criarFilme = async(filme)=>{
     
-    return await FilmeRepository.inserirFilme(filme);
+    return await FilmeRepository.criarFilme(filme);
 }
 const buscarFilmes = async() => {
-    return await FilmeRepository.buscarFilme();
+    return await FilmeRepository.buscarFilmes();
 }
 
 const buscarFilmePorId= async(id) => {

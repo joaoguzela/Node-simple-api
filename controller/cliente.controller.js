@@ -3,7 +3,7 @@ const criarCliente = async(req, res, next)=>{
 try {
 
     let cliente = req.body; 
-    if(!cliente.nome || !cliente.cpf || !cliente.dataNasc || !cliente.idade){
+    if(!cliente.nome || !cliente.cpf || !cliente.datanasc || !cliente.idade){
         throw new Error("Nome, CPF, data de nascimento e idade são obrigatorios");
     }
     if(cliente.idade < 18){
@@ -11,10 +11,7 @@ try {
     }  
     if(!await validaCpf(cliente.cpf)){
         throw new Error("CPF iNVALIDO");
-    }
-    if(!await validaData(cliente.dataNasc)){
-        throw new Error("Data de nascimento esta no formato errado, o formato correto é dd/mm/aaaa");
-    }        
+    }    
     
     cliente = await ClienteService.criarCliente(cliente);
     res.send(cliente);
@@ -58,7 +55,7 @@ const deleteClientePorId = async(req, res, next) => {
 const atualizarCliente = async(req, res, next) => {
     try {
         let cliente = req.body; 
-        if(!cliente.cliente_id||!cliente.nome || !cliente.cpf || !cliente.dataNasc || !cliente.idade){
+        if(!cliente.cliente_id||!cliente.nome || !cliente.cpf || !cliente.datanasc || !cliente.idade){
             throw new Error("Id, Nome, CPF, data de nascimento e idade são obrigatorios");
         }
         if(cliente.idade < 18){
@@ -66,10 +63,7 @@ const atualizarCliente = async(req, res, next) => {
         }
         if(!await validaCpf(cliente.cpf)){
             throw new Error("CPF iNVALIDO");
-        }
-        if(!await validaData(cliente.dataNasc)){
-            throw new Error("Data de nascimento esta no formato errado, o formato correto é dd/mm/aaaa");
-        }          
+        }     
         cliente = await ClienteService.atualizarCliente(cliente);
         res.send(cliente);
         console.log(`Dados do cliente ${cliente.nome} atualizados`);

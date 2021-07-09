@@ -17,7 +17,7 @@ try {
 
 const buscarFilmes = async(req, res, next) => {
     try {        
-        res.send(await FilmeService.buscarFilme());
+        res.send(await FilmeService.buscarFilmes());
         console.log("Filmes encontrados")
     } catch (err) {
         next(err);
@@ -53,7 +53,7 @@ const atualizarFilme = async(req, res, next) => {
         }
         filme = await FilmeService.atualizarFilme(filme);
         res.send(filme);
-        console.log(`Dados do filme ${filme.nome} atualizados`);
+        console.log(`Dados do filme ${filme.nome} atualizado`);
     } catch (err) {
         next(err);
     }
