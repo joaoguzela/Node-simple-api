@@ -77,12 +77,6 @@ const reg =
     new RegExp('([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})')
     return reg.test(cpf)
 }
-const validaData = async(dataNasc) =>{
-    const reg = 
-        new RegExp('/^[0-9]{2}[\/]{1}[0-9]{2}[\/]{1}[0-9]{4}$/g')
-        return reg.test(dataNasc)
-    }
-
 export default{
     criarCliente,
     buscarClientes,

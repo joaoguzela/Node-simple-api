@@ -18,7 +18,7 @@ const renovaLocacao = async(locacao) => {
     try {
         const sql = 
             "UPDATE locacao " +
-            "    SET data_loc = $2, data_dev = $3, his = $4, renovacoes = $5, diasdevolucao = $6, cliente_id= $7, filme_id = $8 " +
+            "    SET data_loc = $2, data_dev = $3, his = $4, renovacoes = $5, diasdevolucao = $6, cliente_id= $7, filme_id = $8" +
             " WHERE locacao_id = $1 RETURNING *";
         const values = [locacao.locacao_id, locacao.data_loc, locacao.data_dev, locacao.his, locacao.renovacoes, locacao.diasdevolucao, locacao.cliente_id, locacao.filme_id];
         const res = await conn.query(sql, values);

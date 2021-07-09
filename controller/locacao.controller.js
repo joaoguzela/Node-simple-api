@@ -15,8 +15,8 @@ const novaLocacao = async(req, res, next) => {
 const renovaLocacao = async(req, res, next) => {
     try {
         let locacao = req.body;
-        if (!locacao.data_loc || !locacao.data_dev ||!locacao.cliente_id || !locacao.filme_id) {
-            throw new Error("Datas, cliente e filme são obrigatorios");
+        if (!locacao.cliente_id || !locacao.filme_id) {
+            throw new Error("cliente e filme são obrigatorios");
         }
         
         locacao = await LocacaoService.renovaLocacao(locacao);
@@ -50,10 +50,9 @@ const LocacaoPorIdFilme = async(req, res, next) => {
         next(err);
     }
 }
-
 const LocacaoPorIdCliente = async(req, res, next) => {
     try {
-        res.send(await LocacaoService.LocacaoPorIdFilme(req.params.id));
+        res.send(await LocacaoService.LocacaoPorIdCliente(req.params.id));
     } catch (err) {
         next(err);
     }
